@@ -18,11 +18,11 @@ provider "aws" {
 
 # Build the S3
 resource "aws_s3_bucket" "b" {
-  bucket = "nd-tf-test-bucket"
+  bucket = "nd-tf-new-bucket"
   acl    = "private"
 
   tags = {
-    Name        = "My bucket"
+    Name        = "New bucket"
     Environment = "Dev"
   }
 }
