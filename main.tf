@@ -10,13 +10,13 @@ terraform {
 
 # Download any stable version in AWS provider of 2.36.0 or higher in 2.36 train
 provider "aws" {
-  region  = "ap-south-1"
+  region  = "us-east-1"
   version = "~> 2.36.0"
 }
 
 # Build the S3
 resource "aws_s3_bucket" "b" {
-  bucket = "nd-tf-bucket-jul-new"
+  bucket = "nd-tf-test-bucket"
   acl    = "private"
 
   tags = {
