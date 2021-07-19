@@ -16,7 +16,7 @@ provider "aws" {
 
 # Build the S3
 resource "aws_s3_bucket" "b" {
-  bucket = "nd-tf-bucket-july"
+  bucket = "nd-tf-bucket-jul-new"
   acl    = "private"
 
   tags = {
