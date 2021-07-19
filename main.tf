@@ -1,6 +1,7 @@
 # Require TF version to be same as or greater than 0.12.13
 terraform {
-  required_version = ">=0.12.13"
+  required_version = ">=0.12.24"
+  
    backend "s3" {
     bucket = "ddftbackendtf"
     key = "ddftbacked.tfstate"
@@ -11,12 +12,22 @@ terraform {
 # Download any stable version in AWS provider of 2.36.0 or higher in 2.36 train
 provider "aws" {
   region  = "us-east-1"
-  version = "~> 2.36.0"
 }
 
 # Build the S3
 resource "aws_s3_bucket" "b" {
   bucket = "nd-tf-test-bucket"
+  acl    = "private"
+
+  tags = {
+    Name        = "New bucket"
+    Environment = "Dev"
+  }
+}
+
+
+resource "aws_s3_bucket" "test" {
+  bucket = "nd-tf-july-bucket"
   acl    = "private"
 
   tags = {
